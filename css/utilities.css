@@ -1,0 +1,55 @@
+/* Padding Utility Classes */
+.u-padding-left {
+  padding-left: 1vw;
+}
+.u-padding-right {
+  padding-right: 1vw;
+}
+.u-padding-top {
+  padding-top: 1vw;
+}
+.u-padding-bottom {
+  padding-bottom: 1vw;
+}
+.u-padding-X {
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+.u-padding-Y {
+  padding-bottom: 1vw;
+  padding-top: 1vw;
+}
+
+/* Margin Utility Classes */
+.u-margin-left {
+  margin-left: 1vw;
+}
+.u-margin-right {
+  margin-right: 1vw;
+}
+.u-margin-top {
+  margin-top: 1vw;
+}
+.u-margin-bottom {
+  margin-bottom: 1vw;
+}
+.u-margin-X {
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+.u-margin-Y {
+  margin-bottom: 1vw;
+  margin-top: 1vw;
+}
+
+/* Navbar Utility Classes */
+@media (min-width: 768px) {
+  .u-navbar-brand {
+    float: left;
+    height: 50px;
+    font-size: 18px;
+  }
+  .u-navbar-right {
+    float: right;
+  }
+}

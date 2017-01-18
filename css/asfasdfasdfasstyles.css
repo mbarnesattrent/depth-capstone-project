@@ -1,0 +1,213 @@
+*{ font-family:verdana,sans-serif; font-size :14pt;
+}
+body {
+  width     :700px;
+  margin    :20px auto;
+  background:#f8f8f8;
+  border    :1px solid #888;
+}
+html {
+  background:#fff
+}
+img { border
+                    :1px solid black;
+  margin-right      :15px;
+  -moz-box-shadow   :2px 2px 2px #888;
+  -webkit-box-shadow:2px 2px 2px #888;
+  box-shadow        :2px 2px 2px #888;
+}
+li a, .button {
+  text-decoration:none;
+}
+li a:hover, .button:hover {
+  color:green;
+}
+.appname {
+  text-align :center;
+  background :#eb8;
+  color      :#40d;
+  font-family:helvetica;
+  font-size  :20pt;
+  padding    :4px;
+}
+.fieldname {
+  float:left;
+  width:120px;
+}
+.main {
+  margin-left:40px;
+}
+
+.info {
+  background :lightgreen;
+  color      :blue;
+  border     :1px solid green;
+  padding    :5px 10px;
+  margin-left:40px;
+}
+.menu li, .button {
+  display
+:inline;
+:4px 6px;
+:1px solid #777;
+:#ddd;
+:#d04;
+}
+padding
+border
+background
+color
+margin-right      :8px;
+border-radius     :5px;
+-moz-box-shadow   :2px 2px 2px #888;
+-webkit-box-shadow:2px 2px 2px #888;
+box-shadow
+.subhead {
+  font-weight:bold;
+}
+.taken, .error {
+  color:red;
+}
+.available {
+  color:green;
+}
+:2px 2px 2px #888;
+.whisper {
+  font-style:italic;
+  color     :#006600;
+}
+#logo {
+  font-family:Georgia;
+  font-weight:bold;
+  font-style :italic;
+  font-size  :97px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Waun's Commit */
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One');
+
+/*Nav bar styling start*/
+
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+
+
+.navbar-fixed-left {
+  width: 72px;
+  position: fixed;
+  height: 100%;
+  background-color: #051f26;
+  border-color: rgb(5, 31, 38);
+}
+
+.navbar-fixed-left .navbar-nav > li {
+  float: none;   Cancel default li float: left 
+  width: 139px;
+}
+
+.navbar-fixed-left + .container {
+  padding-left: 10px;
+}
+.navbar-default .navbar-text {
+  color: #becfd3;
+}
+
+/* On using dropdown menu (To right shift popuped) */
+.navbar-fixed-left .navbar-nav > li > .dropdown-menu {
+  margin-top: -20px;
+  margin-left: 70px;
+}
+
+/*Nav Bar Styling End*/
+
+/*Header Starts*/
+.img {
+  margin-top: -50px;
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  
+}
+
+.gradient {
+  background-image: 
+    linear-gradient(
+      rgba(193,211,217, 0.7),
+      /*rgba(220, 220, 220, 0.7),*/
+      rgba(40, 69, 71, 1)
+    ),
+    url(../assets/Header Photo.jpg);
+}
+
+
+.logo
+{
+    padding-top: 100px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 48%;
+}
+
+p.logo
+{
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  color: white;
+  font-family: 'Julius Sans One', sans-serif;
+   text-decoration: none;
+}
+
+/*Header Ends*/
+
+/*Body Begins*/
+
+.map-row
+{
+   padding: 15px;
+    height: 900px;
+  background-color: rgb(40,69,71);
+}
+
+.nodes-row{
+  padding: 15px;
+    height: 350px;
+  background-color: rgb(180,193,202);
+}
+
+.alerts-row{
+  padding: 15px;
+    height: 350px;
+  background-color: rgb(5,31,38);
+}
+
+.about-row{
+  padding: 15px;
+    height: 350px;
+  background-color: rgb(180,193,202);
+}
+
+/*Body Ends*/

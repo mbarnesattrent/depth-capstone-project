@@ -4,12 +4,7 @@
   $appname = "depth";
 
   $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-  if ($connection->connect_error) {
-    die($connection->connect_error);
-  } else {
-    // echo 'connected';
-
-  }
+  if ($connection->connect_error) die($connection->connect_error);
 
   function jsonQuery($sql){
     global $connection;
