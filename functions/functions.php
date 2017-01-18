@@ -5,7 +5,27 @@
 
   $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
   if ($connection->connect_error) die($connection->connect_error);
-  
+
+  function jsonQuery($sql){
+    global $connection;
+
+    $result = mysqli_query($connection, $sql) or die("Error in Selecting " . mysqli_error($connection));
+
+    //create an array
+    $emparray = array();
+
+    while($row =mysqli_fetch_assoc($result))
+    {
+        $emparray[] = $row;
+    }
+    // echo json_encode($emparray);
+
+    //close the db connection
+    // mysqli_close($connection);
+
+    return json_encode($emparray);
+  }
+
   function createTable($name, $query) //createsTable if it does not exist.
   {
       queryMysql("CREATE TABLE IF NOT EXISTS $name($query)");
