@@ -3,8 +3,16 @@
   
   $appname = "depth";
 
-  $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
-  if ($connection->connect_error) die($connection->connect_error);
+  function connectToDb() {
+    global $connection, $dbhost, $dbuser, $dbpass, $dbname;
+    $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+    if ($connection->connect_error) die($connection->connect_error);
+  }
+
+  function closeConnectToDb() {
+    global $connection;
+    mysqli_close($connection);
+  }
 
   function jsonQuery($sql){
     global $connection;
@@ -19,10 +27,6 @@
         $emparray[] = $row;
     }
     // echo json_encode($emparray);
-
-    //close the db connection
-    // mysqli_close($connection);
-
     return json_encode($emparray);
   }
 

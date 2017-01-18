@@ -1,5 +1,5 @@
 <?php
-  require_once 'header.php';
+  require_once 'phpHeader.php';
   if (!$loggedin) die();
   if (isset($_GET['view'])) $view = sanitizeString($_GET['view']);
   else                      $view = $user;
