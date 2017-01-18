@@ -1,9 +1,11 @@
- <?php
-  require 'header.php';
-  echo "<div class='main'><h3>Please enter your details to log in</h3>";
+<?php
+  require 'phpHeader.php';
+  
   $error = $user = $pass = "";
   if (isset($_POST['user']))
   {
+    connectToDb();
+
     $user = sanitizeString($_POST['user']);
     $pass = sanitizeString($_POST['pass']);
     if ($user == "" || $pass == "")
@@ -19,26 +21,25 @@
         $_SESSION['user'] = $user;
         $_SESSION['pass'] = $pass;
 
-        $test = $_SESSION['user'];
-        echo "test:".$test;
-        print_r($_SESSION); 
-
-        die("You are now logged in. Please <a href='members.php?view=$user'>" .
-            "click here</a> to continue.<br><br>");
+        header('Location: members.php?=$user');
+        die();
       }
     }
   }
-  echo <<<_END
-    <form method='post' action='login.php'>$error
-    <span class='fieldname'>Username</span><input type='text'
-      maxlength='32' name='user' value='$user'><br>
-    <span class='fieldname'>Password</span><input type='password'
-      maxlength='32' name='pass' value='$pass'>
-_END;
+    require 'headerhtml.php';
 ?>
+
+  <div class='main'><h3>Please enter your details to log in</h3>
+    <form method='post' action='login.php'> <?php $error ?>
+    <span class='fieldname'>Username</span><input type='text'
+      maxlength='32' name='user'><br>
+    <span class='fieldname'>Password</span><input type='password'
+      maxlength='32' name='pass'>
     <br>
     <span class='fieldname'>&nbsp;</span>
     <input type='submit' value='Login'>
-    </form><br></div>
+    </form>
+    <br>
+  </div>
   </body>
 </html>

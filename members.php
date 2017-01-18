@@ -1,10 +1,15 @@
 <?php
-  include 'header.php';
-    $example = $_SESSION['user'];
-    print_r($_SESSION);
-  //include 'session.php';
-  echo "members.php";
-  if (!$loggedin) die();
+  
+  include 'phpHeader.php';
+
+  if (!$loggedin) {
+    header('Location: login.php');
+    die();
+  }
+
+  connectToDb();
+  include 'headerhtml.php';
+
   echo "We are logged in";
   echo "<div class='main'>";
   if (isset($_GET['view']))
@@ -17,7 +22,7 @@
     echo "<a class='button' href='messages.php?view=$view'>" .
          "View $name messages</a><br><br>";
     die("</div></body></html>");
-}
+  }
   if (isset($_GET['add']))
   {
     $add = sanitizeString($_GET['add']);
