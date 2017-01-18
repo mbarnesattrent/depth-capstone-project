@@ -1,9 +1,10 @@
 <?php
   if(!session_id()) session_start();
+  
   print_r($_SESSION);
   require_once 'states/head.php';
   require_once 'functions/functions.php';
-  //require_once 'states/loggedin.php';
+  require_once 'states/loggedin.php';
   $userstr = ' (Guest)';
   $example = $_SESSION['user'];
   echo "header:".$example;
