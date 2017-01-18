@@ -1,6 +1,11 @@
 <?php
-  require_once 'header.php';
+  include 'header.php';
+    $example = $_SESSION['user'];
+    print_r($_SESSION);
+  //include 'session.php';
+  echo "members.php";
   if (!$loggedin) die();
+  echo "We are logged in";
   echo "<div class='main'>";
   if (isset($_GET['view']))
   {
