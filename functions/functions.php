@@ -14,7 +14,9 @@
   }
 
   function jsonQuery($sql){
-    global $connection;
+    connectToDb();
+
+    // global $connection;
 
     $result = mysqli_query($connection, $sql) or die("Error in Selecting " . mysqli_error($connection));
 
@@ -26,6 +28,9 @@
         $emparray[] = $row;
     }
     // echo json_encode($emparray);
+
+    closeConnectToDb();
+
     return json_encode($emparray);
   }
 
