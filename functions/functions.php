@@ -1,6 +1,5 @@
 <?php //functions.php
   require_once 'creds.php';
-  
   $appname = "depth";
 
   function connectToDb() {
@@ -59,6 +58,7 @@
     $var = htmlentities($var);
     $var = stripslashes($var);
     return $connection->real_escape_string($var);
+
   }
 
   function showProfile($user)
