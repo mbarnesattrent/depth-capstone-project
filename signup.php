@@ -1,5 +1,6 @@
 <?php
-  require_once 'header.php';
+  require_once 'phpHeader.php';
+  require_once 'headerhtml.php';
   echo <<<_END
     <script>
       function checkUser(user)
@@ -38,23 +39,29 @@ request = false }} }
 </script>
     <div class='main'><h3>Please enter your details to sign up</h3>
 _END;
+echo "hit";
   $error = $user = $pass = "";
   if (isset($_SESSION['user'])) destroySession();
   if (isset($_POST['user']))
   {
+    connectToDb();
+    echo "<br>".$_POST['user'];
+    echo "<br>".$_POST['pass'];
     $user = sanitizeString($_POST['user']);
     $pass = sanitizeString($_POST['pass']);
+    echo "sanitized";
     if ($user == "" || $pass == "")
       $error = "Not all fields were entered<br><br>";
-else {
+    else {
       $result = queryMysql("SELECT * FROM users WHERE email='$user'");
       if ($result->num_rows)
         $error = "That username already exists<br><br>";
-else {
-        queryMysql("INSERT INTO users VALUES('', '$user', '$pass', '$source')");
+      else {
+        queryMysql("INSERT INTO users VALUES('', '$user', '$pass', '')");
         die("<h4>Account created</h4>Please Log in.<br><br>");
       }
-} }
+    }
+  }
   echo <<<_END
     <form method='post' action='signup.php'>$error
     <span class='fieldname'>Username</span>
