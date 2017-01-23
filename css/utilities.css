@@ -20,6 +20,8 @@
   padding-top: 1vw;
 }
 
+
+
 /* Margin Utility Classes */
 .u-margin-left {
   margin-left: 1vw;
@@ -42,6 +44,21 @@
   margin-top: 1vw;
 }
 
+
+
+/* Alignment Utility Classes */
+.u-textAlign-center {
+  text-align: center;
+}
+.u-textAlign-left {
+  text-align: left;
+}
+.u-textAlign-right {
+  text-align: right;
+}
+
+
+
 /* Navbar Utility Classes */
 @media (min-width: 768px) {
   .u-navbar-brand {
@@ -52,4 +69,13 @@
   .u-navbar-right {
     float: right;
   }
+}
+.u-navbar-user {
+  font-size: 18px;
+  color: red; /* may be !important by Bootstrap, this doesn't work. */
+}
+
+/* Body Utility Classes */
+.u-body-background {
+  background-color: #31708f;
 }
