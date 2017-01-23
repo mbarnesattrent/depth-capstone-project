@@ -16,7 +16,7 @@
   function jsonQuery($sql){
     connectToDb();
 
-    // global $connection;
+    global $connection;
 
     $result = mysqli_query($connection, $sql) or die("Error in Selecting " . mysqli_error($connection));
 

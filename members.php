@@ -36,7 +36,7 @@
     $remove = sanitizeString($_GET['remove']);
     queryMysql("DELETE FROM friends WHERE user='$remove' AND friend='$user'");
   }
-  $result = queryMysql("SELECT user FROM members ORDER BY user");
+  $result = queryMysql("SELECT user FROM users ORDER BY user");
   $num    = $result->num_rows;
   echo "<h3>Other Members</h3><ul>";
   for ($j = 0 ; $j < $num ; ++$j)
