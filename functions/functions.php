@@ -34,6 +34,28 @@
     return json_encode($emparray);
   }
 
+  function arrayQuery($sql){
+    // connectToDb();
+
+    global $connection;
+
+    $result = mysqli_query($connection, $sql) or die("Error in Selecting " . mysqli_error($connection));
+
+    //create an array
+    $emparray = array();
+
+    while($row =mysqli_fetch_assoc($result))
+    {
+        $emparray[] = $row;
+    }
+    // echo json_encode($emparray);
+
+    // closeConnectToDb();
+
+    return $emparray;
+  }
+
+
   function createTable($name, $query) //createsTable if it does not exist.
   {
       queryMysql("CREATE TABLE IF NOT EXISTS $name($query)");
