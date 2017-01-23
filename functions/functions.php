@@ -14,7 +14,7 @@
   }
 
   function jsonQuery($sql){
-    connectToDb();
+    // connectToDb();
 
     global $connection;
 
@@ -29,7 +29,7 @@
     }
     // echo json_encode($emparray);
 
-    closeConnectToDb();
+    // closeConnectToDb();
 
     return json_encode($emparray);
   }

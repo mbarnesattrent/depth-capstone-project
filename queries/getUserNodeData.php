@@ -3,7 +3,7 @@
     require "../phpHeader.php";
 
     //Get the username from the session
-    $user = $_SESSION['username'];
+    $user = $_SESSION['user'];
 
     //Use for testing
     // $user = "dexterfichuk@gmail.com";
