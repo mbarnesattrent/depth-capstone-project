@@ -1,9 +1,11 @@
 <?php
     //For DB connection
-    require_once "../functions/functions.php";
+    require "../phpHeader.php";
 
     //Get the username from the session
-    $user = $_SESSION['username'];
+    $user = $_SESSION['user'];
+    
+    // echo $user;
 
     //Performs a get for the specified node
     $node = $_GET['nodeID'];
@@ -20,5 +22,7 @@
         AND data.nodeid = '$node'";
     
     //Print the json so it can be used with a ajax call
+    connectToDb();
     echo jsonQuery($sql);
+    closeConnectToDb();
 ?>

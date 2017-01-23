@@ -2,12 +2,10 @@
     //For DB connection
     // require 'phpHeader.php';
 
-    require_once "../functions/functions.php";
-    
+    require "../phpHeader.php";    
 
     //Get the username from the session
-    // $user = $_SESSION['username'];
-    echo $user;
+    $user = $_SESSION['username'];
     //Use for testing
     // $user = "dexterfichuk@gmail.com";
 
