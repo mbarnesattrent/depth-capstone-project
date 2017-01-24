@@ -63,17 +63,33 @@ _END;
     }
   }
   echo <<<_END
-    <form method='post' action='signup.php'>$error
-    <span class='fieldname'>Username</span>
-    <input type='text' maxlength='32' name='user' value='$user'
-    onBlur='checkUser(this)'><span id='info'></span><br>
-    <span class='fieldname'>Password</span>
-    <input type='text' maxlength='32' name='pass'
-      value='$pass'><br>
+    <div class='main container-fluid'>
+      <div class='row'>
+        <div class='col-xs-6 col-sm-4 col-sm-offset-4'>
+          <div class='panel panel-success'>
+            <div class="panel-heading">
+              <h3 class="panel-title">Please enter your details to sign up</h3>
+            </div>
+            <div class="panel-body">
+              <div class="u-padding-bottom">
+                <form method='post' action='signup.php'>$error
+                  <span class='fieldname col-xs-4'>Username </span><input class='col-xs-8' type='text'
+                    maxlength='32' name='user' value='$user'>
+                  <span class='fieldname col-xs-4'>Password </span><input class='col-xs-8'type='password'
+                    maxlength='32' name='pass' value='$pass'>
+                  <span class='fieldname'>&nbsp;</span>
+                  <input class='center-block' type='submit' value='Sign up'>
+                </form>
+              </div>
+              <a href='login.php'>Already have an account? Login!</a>
+            </div>
+          </div>
+        </div>
+      <div>
+    </div>
+
 _END;
 ?>
-      <span class='fieldname'>&nbsp;</span>
-      <input type='submit' value='Sign up'>
     </form></div><br>
   </body>
 </html>

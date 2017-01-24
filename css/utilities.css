@@ -71,8 +71,7 @@
   }
 }
 .u-navbar-user {
-  font-size: 18px;
-  color: red; /* may be !important by Bootstrap, this doesn't work. */
+  font-size: 16px;
 }
 
 /* Body Utility Classes */

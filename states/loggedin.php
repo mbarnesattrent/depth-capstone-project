@@ -26,7 +26,7 @@
           <li class="u-navbar-user"><a href="#"><?php echo "$user" ?></a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              <img src="assets/profile-icon.png" class="img-responsive" width="20px" align="middle">
+              <span class="glyphicon glyphicon-user u-navbar-user" aria-hidden="true"></span>
             </a>
             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="profile options">
               <li><a href="#">Action</a></li>
