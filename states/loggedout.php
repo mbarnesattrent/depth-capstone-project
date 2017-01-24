@@ -23,7 +23,7 @@
         </ul>
 
         <ul class="nav navbar-nav u-navbar-right">
-          <li><a href="login.php">Login</a></li>
+          <li><a href="login.php">Login/Register</a></li>
         </ul> 
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

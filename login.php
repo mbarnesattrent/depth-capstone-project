@@ -42,14 +42,17 @@
               <h3 class="panel-title">Please enter your details to log in</h3>
             </div>
             <div class="panel-body">
-              <form method='post' action='login.php'> <?php $error ?>
-                <span class='fieldname'>Username</span><input type='text'
-                  maxlength='32' name='user'><br>
-                <span class='fieldname'>Password</span><input type='password'
-                  maxlength='32' name='pass'>
-                <span class='fieldname'>&nbsp;</span>
-                <input type='submit' value='Login'>
-              </form>
+              <div class="u-padding-bottom">
+                <form method='post' action='login.php'> <?php $error ?>
+                  <span class='fieldname col-xs-4'>Username </span><input class='col-xs-8' type='text'
+                    maxlength='32' name='user'>
+                  <span class='fieldname col-xs-4'>Password </span><input class='col-xs-8'type='password'
+                    maxlength='32' name='pass'>
+                  <span class='fieldname'>&nbsp;</span>
+                  <input class='center-block' type='submit' value='Login'>
+                </form>
+              </div>
+              <a href='signup.php'>Don't have an account? Register!</a>
             </div>
           </div>
         </div>
