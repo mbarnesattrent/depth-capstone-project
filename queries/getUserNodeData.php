@@ -1,6 +1,6 @@
 <?php
     //For DB connection
-    require "../phpHeader.php";
+    require_once "../phpHeader.php";
 
     //Get the username from the session
     $user = $_SESSION['user'];

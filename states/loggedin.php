@@ -17,7 +17,7 @@
         <ul class="nav navbar-nav">
           <li><a href="#">Links</a></li>
           <li><a href="#">Map</a></li>
-          <li><a href="#">Nodes</a></li>
+          <li><a href="nodes.php">Nodes</a></li>
           <li><a href="#">Alerts</a></li>
           <li><a href="#">About</a></li>
         </ul>
