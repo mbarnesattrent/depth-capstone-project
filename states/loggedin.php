@@ -1,5 +1,5 @@
-<body>
-  <nav class="navbar navbar-inverse">
+<body class="u-body-background">
+  <nav class="navbar navbar-inverse ">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -23,6 +23,7 @@
         </ul>
 
         <ul class="nav navbar-nav u-navbar-right">
+          <li class="u-navbar-user"><a href="#"><?php echo "$user" ?></a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               <img src="assets/profile-icon.png" class="img-responsive" width="20px" align="middle">
