@@ -1,6 +1,6 @@
 <?php
     //For DB connection
-    require "../phpHeader.php";
+    require_once "../phpHeader.php";
 
     //Query to get data for the logged in user
     $sql = "SELECT * 
