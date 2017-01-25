@@ -13,9 +13,16 @@
         $sql = "UPDATE nodes 
              SET userID = (SELECT id FROM users WHERE email = '$user') WHERE nodeID=$node";
     
-        jsonQuery($sql);
-
-        echo "Successfully added node for $user";
+        $result = queryMysql($sql);
+        if ($result == 1) {
+            //print_r($result);
+            echo json_encode(array('result'=>'success', 'message'=>'Query ran successfully'));
+        }
+        else {
+            //print_r($result);
+            echo json_encode(array('result'=>'error', 'message'=>'Query did not run'));
+            die();
+        }
     }
     else{
         echo "Error, you must pass a nodeID by using ?nodeID=xxxx";
