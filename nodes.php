@@ -83,7 +83,7 @@
       <tbody>
         {{#each this}}
           <tr>
-            <td>{{nodeID}}</td>
+            <td><a href="nodeInfo.php?nodeID={{nodeID}}">{{nodeID}}</a></td>
             <td>{{typeID}}</td>
             <td aria-label="Status OK">
               <span class="glyphicon glyphicon-ok-sign" style="color: green;" aria-hidden="true"></span>
