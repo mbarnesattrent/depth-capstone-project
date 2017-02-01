@@ -23,7 +23,7 @@
               <div class='col-md-6'>Node Details</div>
               
             </div>
-            <div id='node-content'></div>  
+            <canvas id="myChart" height="300" width="500"></canvas>
           </div>
         </div>
       <div>
