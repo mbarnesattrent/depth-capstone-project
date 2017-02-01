@@ -23,6 +23,7 @@
     
     //Print the json so it can be used with a ajax call
     connectToDb();
+    
     echo jsonQuery($sql);
     closeConnectToDb();
 ?>
