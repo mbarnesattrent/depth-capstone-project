@@ -29,11 +29,11 @@
               <span class="glyphicon glyphicon-user u-navbar-user" aria-hidden="true"></span>
             </a>
             <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="profile options">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
+              <li><a href="../accountsettings.php"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Account Settings</a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-alert" aria-hidden="true"></span> Notifications</a></li>
+              <li><a href="#">Organizations</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="../logout.php">Logout</a></li>
+              <li><a href="../logout.php"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
             </ul>
           </li>
         </ul> 
