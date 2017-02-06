@@ -4,7 +4,7 @@ console.log("About to query");
 $.getJSON( "../../queries/getUserNodeData.php?nodeID="+getQueryVariable("nodeID"), function( result ) {
     
     console.log(result);
-
+    console.log("NodeID is " + getQueryVariable("nodeID"));
      var labels = [],data=[];
 
          for(var i = 0; i < result.length; i++){
