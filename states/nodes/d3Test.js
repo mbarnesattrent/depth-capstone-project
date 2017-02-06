@@ -1,10 +1,11 @@
 
 console.log("About to query");
 
-d3.json("../../queries/getUserNodeData.php?nodeID="+getQueryVariable("nodeID"), function(data) {
-    alert(data.length)
-    
+d3.json("../../queries/userNodeDailyAvg.php", function(data) {
+    // alert(data.length)
+    console.log(data);
 });
+
 
 
 //Used for GET 

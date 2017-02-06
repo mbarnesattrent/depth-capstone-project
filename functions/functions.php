@@ -34,6 +34,44 @@
     return json_encode($emparray);
   }
 
+  function csvQuery($sql){
+    // connectToDb();
+
+    global $connection;
+
+    $result = mysqli_query($connection, $sql) or die("Error in Selecting " . mysqli_error($connection));
+
+    //create an array
+    // $emparray = array();
+
+    // while($row =mysqli_fetch_assoc($result))
+    // {
+    //     $emparray[] = $row;
+    // }
+    // echo json_encode($emparray);
+
+    // closeConnectToDb();
+    
+
+    $csvString = '';
+    $first = true;
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        if ($first === true) {
+            $first = false;
+            addRowToCsv($csvString, array_keys($row));
+        }
+        addRowToCsv($csvString, $row);
+    }
+
+      return $csvString;
+  }
+
+  function addRowToCsv(& $csvString, $cols) {
+    $csvString = implode(',', $cols) . PHP_EOL;
+}
+
+
   function arrayQuery($sql){
     // connectToDb();
 

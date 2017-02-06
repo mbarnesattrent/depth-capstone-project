@@ -22,7 +22,6 @@
             <div class='h3'>
               <div class='col-md-6'>Node Details</div>
             </div>
-
           </div>
         </div>
       <div>
