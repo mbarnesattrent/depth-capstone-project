@@ -9,10 +9,24 @@
   require 'headerhtml.php';
 ?>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.js"></script>
 
-<script src="/states/nodes/d3Test.js"></script>
 
+<head>
+	<style>
+
+	.axis {
+	  font: 10px sans-serif;
+	}
+
+	.axis path,
+	.axis line {
+	  fill: none;
+	  stroke: #000;
+	  shape-rendering: crispEdges;
+	}
+
+	</style>
+</head>
 
 <!-- Begin unconditional template -->
     <div class='main container-fluid '>
@@ -21,6 +35,11 @@
           <div class="well">
             <div class='h3'>
               <div class='col-md-6'>Node Details</div>
+            </div>
+            <div id="key"> 
+              <script src="http://d3js.org/d3.v3.min.js"></script>
+              <script src="/states/nodes/d3Test.js"></script>
+              <script src="/states/nodes/waterTempChart.js"></script>
             </div>
           </div>
         </div>
