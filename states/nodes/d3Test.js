@@ -1,12 +1,10 @@
 
 console.log("About to query");
 
-d3.json("../../queries/userNodeDailyAvg.php", function(data) {
+d3.csv("../../queries/userNodeDailyAvg.php", function(data) {
     // alert(data.length)
     console.log(data);
 });
-
-
 
 //Used for GET 
 function getQueryVariable(variable)

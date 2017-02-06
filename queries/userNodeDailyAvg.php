@@ -18,9 +18,14 @@
     
     //Print the json so it can be used with a ajax call
     connectToDb();
-    
+    // header('Content-Type: text/csv');
+    // header('Content-Disposition: attachment; filename="export.csv"');
+    // header('Pragma: no-cache');
+    // header('Expires: 0');
+
     echo csvQuery($sql);
     // echo $result;
+  
 
     closeConnectToDb();
 ?>
