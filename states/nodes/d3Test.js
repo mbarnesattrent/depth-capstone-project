@@ -58,7 +58,7 @@ d3.csv("../../queries/userNodeDailyAvg.php", function(data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("Value ($)");
+      .text("Temp(C)");
 
   svg.selectAll("bar")
       .data(data)
