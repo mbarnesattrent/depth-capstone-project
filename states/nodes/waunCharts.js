@@ -2,7 +2,7 @@
 console.log("About to query");
 
 waterTempBar();
-
+chartTest();
 
 //Used for GET 
 function getQueryVariable(variable)
@@ -85,5 +85,11 @@ function waterTempBar(){
         .attr("y", function(d) { return y(d.airHumidity); })
         .attr("height", function(d) { return height - y(d.airHumidity); });
 
+    });
+}
+
+function chartTest(){
+    d3.csv("../../queries/getSingleNodeStatsCSV.php?nodeID="+ getQueryVariable("nodeID"), function(data){
+        console.log(data);
     });
 }
