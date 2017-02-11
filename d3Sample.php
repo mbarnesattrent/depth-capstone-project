@@ -38,8 +38,8 @@
             </div>
             <div id="key"> 
               <script src="http://d3js.org/d3.v3.min.js"></script>
-              <!--<script src="/states/nodes/d3Test.js"></script>-->
-              <script src="/states/nodes/waterTempChart.js"></script>
+              <script src="/states/nodes/d3Test.js"></script>
+              <!--<script src="/states/nodes/waterTempChart.js"></script>-->
             </div>
           </div>
         </div>

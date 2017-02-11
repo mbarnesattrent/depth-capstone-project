@@ -25,7 +25,6 @@
 
     echo csvQuery($sql);
     // echo $result;
-  
 
     closeConnectToDb();
 ?>
