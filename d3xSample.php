@@ -26,8 +26,6 @@
 	}
 
 	</style>
-  <!--Used for autorefreshing page-->
-  <!--<meta http-equiv="refresh" content="5" />-->
 </head>
 
 <!-- Begin unconditional template -->
@@ -39,10 +37,12 @@
           <div class="well">
             <div class='h3'>
               <div class='col-md-6'>Node Details</div>
+              <h5>pH</h5>
             </div>
-             <br>Water Temperature
-            <div id="key"></div>
-            <script src="/states/nodes/d3Test.js"></script>
+            <div id="pHChart"></div>
+            <div id="waterTemp"></div>
+            
+            <script src="/states/nodes/d3xCharts.js"></script>
           </div>
         </div>
       <div>
