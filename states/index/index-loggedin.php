@@ -63,12 +63,4 @@
 <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
 <script src="/states/nodes/dashboardCharts.js"></script>
 
-<script>
-console.log("banner fade");
-window.setTimeout(function() {
-  $("#logged_in_message").fadeTo(500, 0).slideUp(500, function(){
-    $(this).remove(); 
-  });
-}, 3000)
-<script>
 
