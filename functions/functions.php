@@ -1,6 +1,7 @@
 <?php //functions.php
   require_once 'creds.php';
   $appname = "depth";
+  $csvString = '';
 
   function connectToDb() {
     global $connection, $dbhost, $dbuser, $dbpass, $dbname;
@@ -33,6 +34,57 @@
 
     return json_encode($emparray);
   }
+
+  function csvQuery($sql){
+    // connectToDb();
+
+    global $connection;
+
+    $result = mysqli_query($connection, $sql) or die("Error in Selecting " . mysqli_error($connection));
+
+    $emparray = array();
+    
+    while($row =mysqli_fetch_assoc($result))
+    {
+        $emparray[] = $row;
+    }
+
+      return to_csv($emparray);
+  }
+
+  function to_csv( $array ) {
+    $csv;
+
+    ## Grab the first element to build the header
+    $arr = array_pop( $array );
+    $temp = array();
+    foreach( $arr as $key => $data ) {
+      $temp[] = $key;
+    }
+    $csv = implode( ',', $temp ) . "\n";
+
+    ## Add the data from the first element
+    $csv .= to_csv_line( $arr );
+
+    ## Add the data for the rest
+    foreach( $array as $arr ) {   
+      $csv .= to_csv_line( $arr );
+    }
+
+    return $csv;
+}
+
+  function to_csv_line( $array ) {
+    $temp = array();
+    foreach( $array as $elt ) {
+      $temp[] = '"' . addslashes( $elt ) . '"';
+    }
+
+    $string = implode( ',', $temp ) . "\n";
+
+    return $string;
+}
+
 
   function arrayQuery($sql){
     // connectToDb();

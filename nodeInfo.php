@@ -9,8 +9,6 @@
   require 'headerhtml.php';
 ?>
 
-<script src="/frameworks/Chart.bundle.js"></script>
-
 <script src="/states/nodes/nodeInfo.js"></script>
 
 
@@ -23,7 +21,6 @@
               <div class='col-md-6'>Node Details</div>
               
             </div>
-            <canvas id="myChart" height="300" width="500"></canvas>
           </div>
         </div>
       <div>
