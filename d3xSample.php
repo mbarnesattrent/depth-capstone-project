@@ -37,17 +37,35 @@
           <div class="well">
             <div class='h3'>
               <div class='col-md-6'>Node Details</div>
-              <br><br><h5>pH</h5>
             </div>
-            <div id="pieChart"></div>
-            <div id="waterTemp"></div>
-            <div id="waterTempLineChart"></div>
+            <br><br>
+            <div>
+              <!--Placeholders For All The Charts-->
+              <h5>Total Percent of Records By Node</h5>
+              <div id="pieChart"></div>
 
-            <script src="https://d3js.org/d3.v4.min.js"></script>
-            <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
-            <script src="/states/nodes/dashboardCharts.js"></script>
+              <h5>Percent of Records by Node Each Day</h5>
+              <div id="countsByDay"></div>
+
+              <h5>pH Level of Nodes by Day
+              <div id="dualArea"></div>
+
+              </h5>Average Water Temperature by Day</h5>
+              <div id="waterTemp"></div>
+
+              <h5>Water Temperature of Nodes Over Time</h5>
+              <div id="waterTempLineChart"></div>
+
+              <h5>Water VS Air Temperatures Over Time</h5>
+              <div id="tempsLineChart"></div>
+            </div>
           </div>
         </div>
       <div>
     </div>
 <!-- End unconditional template -->
+
+<!--To Compile Charts-->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+<script src="/states/nodes/dashboardCharts.js"></script>
