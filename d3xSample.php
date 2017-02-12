@@ -39,7 +39,7 @@
               <div class='col-md-6'>Node Details</div>
               <br><br><h5>pH</h5>
             </div>
-            <div id="pHChart"></div>
+            <div id="pieChart"></div>
             <div id="waterTemp"></div>
             <div id="waterTempLineChart"></div>
 
