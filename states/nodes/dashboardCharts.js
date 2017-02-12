@@ -12,6 +12,14 @@ waterTempChart();
 waterTempLineChart();
 tempsLineChart();
 
+//Used for fading loggedin notification, need to eventually make so it only appears upon first login
+console.log("Fade Banner!");
+window.setTimeout(function() {
+  $("#logged_in_message").fadeTo(500, 0).slideUp(500, function(){
+    $(this).remove(); 
+  });
+}, 2000)
+
 function waterTempChart(){
     var svg = dimple.newSvg("#waterTemp", 590, 400);
     //Simple format to call our query andretrieve a CSV
