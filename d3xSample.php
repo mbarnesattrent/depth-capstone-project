@@ -29,7 +29,7 @@
 </head>
 
 <!-- Begin unconditional template -->
-<script src="http://d3js.org/d3.v3.min.js"></script>
+
 
     <div class='main container-fluid '>
       <div class='row'>
@@ -37,12 +37,15 @@
           <div class="well">
             <div class='h3'>
               <div class='col-md-6'>Node Details</div>
-              <h5>pH</h5>
+              <br><br><h5>pH</h5>
             </div>
             <div id="pHChart"></div>
             <div id="waterTemp"></div>
-            
-            <script src="/states/nodes/d3xCharts.js"></script>
+            <div id="waterTempLineChart"></div>
+
+            <script src="https://d3js.org/d3.v4.min.js"></script>
+            <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+            <script src="/states/nodes/dashboardCharts.js"></script>
           </div>
         </div>
       <div>
