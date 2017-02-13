@@ -101,8 +101,52 @@
       <div class='row'>
         <div class='col-xs-6 col-sm-8 col-sm-offset-2'>
           <div class='well well-lg'>
-            <h3 class='text-center'>I am a placeholder for a map!</h3>
-            <img src='http://labs.strava.com/assets/img/fb/heatmap.png' class='img-responsive' alt='placeholder-image-for-map'>
+            <div class="container"><h1>Map</h1></div>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d45617.77950724317!2d-78.3111359730191!3d44.38983860017785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e6!4m3!3m2!1d44.3590131!2d-78.2899582!4m3!3m2!1d44.35899!2d-78.289969!5e0!3m2!1sen!2sca!4v1487010690917" style="border:1px solid black;"></iframe>
+            </div>
+          </div>
+          <div class='well well-lg'>
+            <div class="container"><h1>Dashboard Charts</h1></div>
+            <div id="exTab1" class="container">
+              <ul  class="nav nav-pills">
+                <li class="active"><a  href="#1a" data-toggle="tab">Records by Node</a></li>
+                <li><a href="#2a" data-toggle="tab">Percent Each Day</a></li>
+                <li><a href="#3a" data-toggle="tab">pH</a></li>
+                <li><a href="#4a" data-toggle="tab">Water Temps</a></li>
+                <li><a href="#5a" data-toggle="tab">Temp Over Time</a></li>
+                <li><a href="#6a" data-toggle="tab">Water vs Air Temp</a></li>
+              </ul>
+
+              <div class="tab-content clearfix">
+                <div class="tab-pane active" id="1a">
+                  <h5>Total Percent of Records By Node</h5>
+                  <div id="pieChart"></div>
+                </div>
+                <div class="tab-pane" id="2a">
+                  <h5>Percent of Records by Node Each Day</h5>
+                  <div id="countsByDay"></div>
+                </div>
+                <div class="tab-pane" id="3a">
+                  <h5>pH Level of Nodes by Day
+                  <div id="dualArea"></div>
+                </div>
+                  <div class="tab-pane" id="4a">
+                  </h5>Average Water Temperature by Day</h5>
+                  <div id="waterTemp"></div>
+                </div>
+                <div class="tab-pane" id="5a">
+                  <h5>Water Temperature of Nodes Over Time</h5>
+                  <div id="waterTempLineChart"></div>
+                </div>
+                <div class="tab-pane" id="6a">
+                  <h5>Water VS Air Temperatures Over Time</h5>
+                  <div id="tempsLineChart"></div>
+                </div>
+              </div>
+            </div>
+
+
           </div>
           <!-- Begin unconditional template -->
           <div class="well">
@@ -121,5 +165,11 @@
     </div>
     <!-- End unconditional template -->
     
+<!--To Compile Charts-->
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+<script src="/states/nodes/dashboardCharts.js"></script>
+
+
   </body>
 </html>
