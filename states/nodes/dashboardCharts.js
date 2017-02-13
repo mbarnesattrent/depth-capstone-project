@@ -72,7 +72,7 @@ function countsByDay(){
         //   "01/07/2012", "01/08/2012", "01/09/2012",
         //   "01/10/2012", "01/11/2012", "01/12/2012"]);
         var myChart = new dimple.chart(svg, data);
-        myChart.setBounds(75, 30, 480, 330)
+        myChart.setBounds(75, 30, 480, 330);
         myChart.addMeasureAxis("x", "Record Count");
         var y = myChart.addCategoryAxis("y", "Record Date");
         y.addOrderRule("Date");
