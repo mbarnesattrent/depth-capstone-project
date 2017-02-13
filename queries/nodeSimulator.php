@@ -40,7 +40,7 @@
             $sql = "INSERT INTO  `depth`.`data` (
             `record` , `nodeid` , `waterTemp` , `airTemp` , `airHumidity` , `pH` , 
             `turbidity` , `conductivity` , `gpsLatitude` , `gpsLongitude` , `timestamp`)
-            VALUES (NULL ,  '$node',  '$watertemp',  '$airtemp',  '$humidity',  '$pH',  '0',  '0',  '0',  '0', DATE_SUB(NOW(), INTERVAL $daySubtract DAY))";
+            VALUES (NULL ,  '$node',  '$watertemp',  '$airtemp',  '$humidity',  '$pH',  '0',  '0',  '0',  '0', CURRENT_TIMESTAMP - INTERVAL $daySubtract DAY)";
 
             csvQuery($sql);
             $iter--;
