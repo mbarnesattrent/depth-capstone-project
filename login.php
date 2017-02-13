@@ -26,7 +26,7 @@
         $_SESSION['pass'] = $pass;
         
         header('Location: dashboard.php');
-        //header('Location: members.php?=$user');
+        
         die();
       }
     }
