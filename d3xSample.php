@@ -39,7 +39,9 @@
               <div class='col-md-6'>Node Details</div>
             </div>
             <br><br>
+            <div id="map-canvas"></div>
             <div>
+
               <div class="container"><h1>Dashboard Charts  </h1></div>
               <div id="exTab1" class="container">	
               <ul  class="nav nav-pills">
@@ -93,6 +95,9 @@
 <!-- End unconditional template -->
 
 <!--To Compile Charts-->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvnmk5koNLtMNlq1Q2kn3dOVfs_UWNN_A&libraries=geometry">
+</script>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
 <script src="/states/nodes/dashboardCharts.js"></script>
+<script src="/states/nodes/map.js"></script>
