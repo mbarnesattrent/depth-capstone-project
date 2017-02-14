@@ -12,7 +12,7 @@
     
         jsonQuery($sql);
 
-        echo "Successfully added node for $user";
+        echo "Successfully removed node for $user";
     }
     else{
         echo "Error, you must pass a nodeID by using ?nodeID=xxxx";

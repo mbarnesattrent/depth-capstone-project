@@ -7,31 +7,25 @@
   require 'headerhtml.php';
 ?>
 <script type="text/javascript">
+  //allow for validation
   $(document).ready(function() {
     $("#deleteNodeForm").submit(function(event){
-      if(!(validateDeleteInput())) {
-        event.preventDefault();
+      var nodeID = validateDeleteInput();
+      if (nodeID) {
+        $.getJSON( "../../queries/deleteNode.php?nodeID="+nodeID, function( data ) {});
+        return;
       }
+      event.preventDefault();
     });
-     $("#addNodeForm").submit(function(event){
-      if(!(validateSerialInput())) {
-        event.preventDefault();
+    $("#addNodeForm").submit(function(event){
+      var nodeID = validateSerialInput();
+      if (nodeID) {
+        $.getJSON( "../../queries/addNode.php?nodeID="+nodeID, function( data ) {});
+        return;
       }
+      event.preventDefault();
     });
   });
-
-  function addNodeFunction() {
-    var nodeID = $('#nodeIDfield').val();
-    if (validateSerialInput()) {
-      $.getJSON( "../../queries/addNode.php?nodeID="+nodeID, function( data ) {
-        //console.log(data); to view error code
-        $('#addNodeForm').submit();
-      });
-      return true;
-    } else {
-      return false;
-    }
-  }
 
   function validateSerialInput() {
     var nodeID = $('#nodeIDfield').val();
@@ -39,8 +33,8 @@
       // check if the nodeID is numerical format.
       $('#addNodeForm').addClass('has-error has-feedback');
       $('#addNodeForm').attr('data-original-title', 'Please input a valid Node Serial')
-          .tooltip('fixTitle')
-      $('#NodeIDfield').tooltip({container: 'body', placement: 'right',
+        .tooltip('fixTitle')
+      $('#nodeIDfield').tooltip({container: 'body', placement: 'right',
                                         trigger: 'manual'}).tooltip('show');
       return false;
     } else {
@@ -49,30 +43,18 @@
       $('#addNodeForm').attr('data-original-title', '')
         .tooltip('fixTitle')
       $('#nodeIDfield').tooltip('hide');
-      return true;
-    }
-  }
-
-  function deleteNodeFunction() {
-    if (validateDeleteInput()) {
-      // $.getJSON( "../../queries/addNode.php?nodeID="+nodeID, function( data ) {
-      //   //console.log(data); to view error code
-      //   $('#addNodeForm').submit();
-      // });
-      return true;
-    } else {
-      return false;
+      return nodeID;
     }
   }
 
   function validateDeleteInput() {
-$('#deleteNodeIDfield').tooltip('hide');
+    $('#deleteNodeIDfield').tooltip('hide');
     var deleteNodeID = $('#deleteNodeIDfield').val();
     if (!($.isNumeric(deleteNodeID))) {
       // check if the nodeID is numerical format.
       $('#deleteNodeForm').addClass('has-error has-feedback');
       $('#deleteNodeForm').attr('data-original-title', 'Please input a valid Node Serial')
-          .tooltip('fixTitle')
+        .tooltip('fixTitle')
       $('#deleteNodeIDfield').tooltip({container: 'body', placement: 'right',
                                         trigger: 'manual'}).tooltip('show');
       return false;
@@ -80,17 +62,17 @@ $('#deleteNodeIDfield').tooltip('hide');
       // check for the confirmed nodeID serial to delete.
       $('#deleteNodeForm').addClass('has-error has-feedback');
       $('#deleteNodeForm').attr('data-original-title', 'Node serials do not match')
-          .tooltip('fixTitle')
+        .tooltip('fixTitle')
       $('#deleteNodeIDfield').tooltip({container: 'body', placement: 'right',
                                         trigger: 'manual'}).tooltip('show');
       return false;
     } else {
       // no validation errors
       $('#deleteNodeForm').removeClass('has-error has-feedback');
-       $('#deleteNodeForm').attr('data-original-title', '')
-          .tooltip('fixTitle')
+      $('#deleteNodeForm').attr('data-original-title', '')
+        .tooltip('fixTitle')
       $('#deleteNodeIDfield').tooltip('hide');
-      return true;
+      return deleteNodeID;
     }
   }
 </script>
@@ -117,7 +99,7 @@ $('#deleteNodeIDfield').tooltip('hide');
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" form='addNodeForm' class="btn btn-primary" 
-                id='addNodeButton' onclick='addNodeFunction();'>Save changes</button>
+                id='addNodeButton' onclick='addNodeFunction()'>Save changes</button>
       </div>
     </div>
   </div>
@@ -135,7 +117,7 @@ $('#deleteNodeIDfield').tooltip('hide');
       <div class="modal-body">
         <div class="u-padding-bottom">
           <span>To confirm deletion, please enter the serial of the node you wish to delete.</span>
-          <form id='deleteNodeForm' class='form-group'> <?php $error ?>
+          <form id='deleteNodeForm' class='form-group'"> <?php $error ?>
             <div class="input-group">
               <span class="input-group-addon" id="DeleteNodeSerial">Node Serial</span>
               <input type="text" class="form-control" onBlur='validateDeleteInput()' maxlength="4" name='deleteNodeID' id='deleteNodeIDfield' placeholder="XXXX" aria-describedby="DeleteNodeSerial">
@@ -146,7 +128,7 @@ $('#deleteNodeIDfield').tooltip('hide');
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" form='deleteNodeForm' class="btn btn-primary"
-                id='deleteNodeButton' onclick='deleteNodeFunction();'>Save changes</button>
+                id='deleteNodeButton' onclick="deleteNodeFunction()">Save changes</button>
       </div>
     </div>
   </div>
