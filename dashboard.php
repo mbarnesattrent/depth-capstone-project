@@ -7,27 +7,72 @@
   require 'headerhtml.php';
 ?>
 <script type="text/javascript">
-  function addNodeFunction() {
-    var nodeID = $('#nodeIDfield').val();
-    if (validateSerialInput()) {
-      $.getJSON( "../../queries/addNode.php?nodeID="+nodeID, function( data ) {
-        //console.log(data); to view error code
-        $('#addNodeForm').submit();
-      });
-    }
-  }
+  //allow for validation
+  $(document).ready(function() {
+    $("#deleteNodeForm").submit(function(event){
+      var nodeID = validateDeleteInput();
+      if (nodeID) {
+        $.getJSON( "../../queries/deleteNode.php?nodeID="+nodeID, function( data ) {});
+        return;
+      }
+      event.preventDefault();
+    });
+    $("#addNodeForm").submit(function(event){
+      var nodeID = validateSerialInput();
+      if (nodeID) {
+        $.getJSON( "../../queries/addNode.php?nodeID="+nodeID, function( data ) {});
+        return;
+      }
+      event.preventDefault();
+    });
+  });
 
   function validateSerialInput() {
     var nodeID = $('#nodeIDfield').val();
     if (!($.isNumeric(nodeID))) {
+      // check if the nodeID is numerical format.
       $('#addNodeForm').addClass('has-error has-feedback');
-      $('#nodeIDfield').tooltip({container: 'body', placement: 'right', 
-                                  title: 'Please input a valid Node Serial', trigger: 'manual'}).tooltip('show');
+      $('#addNodeForm').attr('data-original-title', 'Please input a valid Node Serial')
+        .tooltip('fixTitle')
+      $('#nodeIDfield').tooltip({container: 'body', placement: 'right',
+                                        trigger: 'manual'}).tooltip('show');
       return false;
     } else {
+      // no validation errors
       $('#addNodeForm').removeClass('has-error has-feedback');
+      $('#addNodeForm').attr('data-original-title', '')
+        .tooltip('fixTitle')
       $('#nodeIDfield').tooltip('hide');
-      return true;
+      return nodeID;
+    }
+  }
+
+  function validateDeleteInput() {
+    $('#deleteNodeIDfield').tooltip('hide');
+    var deleteNodeID = $('#deleteNodeIDfield').val();
+    if (!($.isNumeric(deleteNodeID))) {
+      // check if the nodeID is numerical format.
+      $('#deleteNodeForm').addClass('has-error has-feedback');
+      $('#deleteNodeForm').attr('data-original-title', 'Please input a valid Node Serial')
+        .tooltip('fixTitle')
+      $('#deleteNodeIDfield').tooltip({container: 'body', placement: 'right',
+                                        trigger: 'manual'}).tooltip('show');
+      return false;
+    } else if (!(deleteNodeID == deleteModalNodeID)) {
+      // check for the confirmed nodeID serial to delete.
+      $('#deleteNodeForm').addClass('has-error has-feedback');
+      $('#deleteNodeForm').attr('data-original-title', 'Node serials do not match')
+        .tooltip('fixTitle')
+      $('#deleteNodeIDfield').tooltip({container: 'body', placement: 'right',
+                                        trigger: 'manual'}).tooltip('show');
+      return false;
+    } else {
+      // no validation errors
+      $('#deleteNodeForm').removeClass('has-error has-feedback');
+      $('#deleteNodeForm').attr('data-original-title', '')
+        .tooltip('fixTitle')
+      $('#deleteNodeIDfield').tooltip('hide');
+      return deleteNodeID;
     }
   }
 </script>
@@ -43,7 +88,7 @@
       </div>
       <div class="modal-body">
         <div class="u-padding-bottom">
-          <form id='addNodeForm' class='form-group' name='asdfga'> <?php $error ?>
+          <form id='addNodeForm' class='form-group'> <?php $error ?>
             <div class="input-group">
               <span class="input-group-addon" id="NodeSerial">Node Serial</span>
               <input type="text" class="form-control" onBlur='validateSerialInput()' maxlength="4" name='nodeID' id='nodeIDfield' placeholder="XXXX" aria-describedby="NodeSerial">
@@ -54,13 +99,41 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" form='addNodeForm' class="btn btn-primary" 
-                id='addNodeButton' onclick='addNodeFunction();'>Save changes</button>
+                id='addNodeButton' onclick='addNodeFunction()'>Save changes</button>
       </div>
     </div>
   </div>
 </div>
 <!-- Modal Ends -->
 
+<!-- Modal (should come as soon as possible, so it's not displaced) -->
+<div class="modal fade" id="deleteNodeModal" tabindex="-1" role="dialog" aria-labelledby="Delete Node Modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="DeleteNodeModalHeader"></h4>
+      </div>
+      <div class="modal-body">
+        <div class="u-padding-bottom">
+          <span>To confirm deletion, please enter the serial of the node you wish to delete.</span>
+          <form id='deleteNodeForm' class='form-group'"> <?php $error ?>
+            <div class="input-group">
+              <span class="input-group-addon" id="DeleteNodeSerial">Node Serial</span>
+              <input type="text" class="form-control" onBlur='validateDeleteInput()' maxlength="4" name='deleteNodeID' id='deleteNodeIDfield' placeholder="XXXX" aria-describedby="DeleteNodeSerial">
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" form='deleteNodeForm' class="btn btn-primary"
+                id='deleteNodeButton' onclick="deleteNodeFunction()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Ends -->
 
 <!-- Pull in the user's node data -->
 <script src="/states/nodes/nodes.js"></script>
@@ -84,6 +157,9 @@
             <td>{{typeID}}</td>
             <td aria-label="Status OK">
               <span class="glyphicon glyphicon-ok-sign" style="color: green;" aria-hidden="true"></span>
+            </td>
+            <td aria-label="Delete Node" style="border-top: none;">
+              <span role="button" data-toggle="modal" data-target="#deleteNodeModal" data-whatever="{{nodeID}}" aria-label="Delete Node" class="glyphicon glyphicon-trash" style="color: red;"></span>
             </td>
           </tr>
         {{/each}}
@@ -169,7 +245,7 @@
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
 <script src="/states/nodes/dashboardCharts.js"></script>
-
+<script src="/states/dashboard/dashboard.js"></script>
 
   </body>
 </html>
