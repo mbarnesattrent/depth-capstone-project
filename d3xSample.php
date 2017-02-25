@@ -38,17 +38,8 @@
             <div class='h3'>
               <div class='col-md-6'>Node Details</div>
             </div>
-<<<<<<< HEAD
-            <div>
-              <div class="container"><h1>Dashboard Charts</h1></div>
-=======
-            <br><br>
-            <div id="map-canvas"></div>
-            <div>
 
-              <div class="container"><h1>Dashboard Charts  </h1></div>
->>>>>>> ac72cca7ac3971a34a2de4bcc4324d4bda31f943
-              <div id="exTab1" class="container">	
+            <div id="exTab1" class="container">	
                 <ul  class="nav nav-pills">
                   <li class="active"><a  href="#1a" data-toggle="tab">Records by Node</a></li>
                   <li><a href="#2a" data-toggle="tab">Percent Each Day</a></li>
