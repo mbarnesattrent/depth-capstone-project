@@ -9,7 +9,7 @@ var json = [{"id":48,"title":"Helgelandskysten","longitude":"12.63376","latitude
 
 
 function initialize() {
-  
+  console.log("Initializing");
   // Giving the map som options
   var mapOptions = {
     zoom: 4,
@@ -35,10 +35,6 @@ function initialize() {
     
     // Adding a new info window for the object
     var clicker = addClicker(marker, obj.title);
-    
- 
-
-
 
   } // end loop
   
@@ -53,15 +49,6 @@ function initialize() {
       
     });
   }
-
-
-  
-
-  
-  
- 
-  
-  
   
 }
 

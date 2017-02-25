@@ -20,6 +20,6 @@
     
     //Print the json so it can be used with a ajax call
     connectToDb();
-    echo csvQuery($sql);
+    echo jsonQuery($sql);
     closeConnectToDb();
 ?>
