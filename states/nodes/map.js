@@ -16,7 +16,7 @@ function load(){
 }
 
 function initialize() {
-  console.log("Initializing");
+  // console.log("Initializing");
   // Giving the map som options
   var mapOptions = {
     zoom: 7,
@@ -39,10 +39,13 @@ function initialize() {
       map: map,
       title: obj.nodeid // this works, giving the marker a title with the correct title
     });
+    // Set content of markers
     (function(marker, obj) {
         cont = "<strong>Node:</strong> " + obj.nodeid + 
-        "<br><strong>Last Updated:</strong> " + obj.timestamp+ 
-        "<br><a href='nodeInfo.php?nodeID="+obj.nodeid+"'>More Details</a>";
+        "<br><strong>Last Updated:</strong> " + obj.timestamp + 
+        "<br><strong>Water Temp:</strong> " + obj.waterTemp + 
+        "°C<br><strong>Air Temp:</strong> " + obj.airTemp +
+        "°C<br><a href='nodeInfo.php?nodeID="+obj.nodeid+"'>More Details</a>";
 				// Attaching a click event to the current marker
 				google.maps.event.addListener(marker, "click", function(e) {
 					infoWindow.setContent(cont);
