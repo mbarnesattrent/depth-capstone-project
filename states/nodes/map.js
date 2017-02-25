@@ -21,17 +21,20 @@ function initialize() {
   var mapOptions = {
     zoom: 7,
     center: new google.maps.LatLng(json[0]['gpsLatitude'],json[0]['gpsLongitude'])
+
   };
   
   // Creating the map
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-  
+
   var infoWindow = new google.maps.InfoWindow();
+
   // Looping through all the entries from the JSON data
   for(var i = 0; i < json.length; i++) {
     
     // Current object
     var obj = json[i];
+
     var cont = "";
     // Adding a new marker for the object
     var marker = new google.maps.Marker({
@@ -70,8 +73,10 @@ function initialize() {
       infowindow.open(map, marker);
     });
   }
+
   
 }
 
 // Initialize the map
+
 google.maps.event.addDomListener(window, 'load', load);

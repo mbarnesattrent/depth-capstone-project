@@ -38,10 +38,8 @@
             <div class='h3'>
               <div class='col-md-6'>Node Details</div>
             </div>
-            <div>
-              <div class="container"><h1>Dashboard Charts</h1></div>
 
-              <div id="exTab1" class="container">	
+            <div id="exTab1" class="container">	
                 <ul  class="nav nav-pills">
                   <li class="active"><a  href="#1a" data-toggle="tab">Records by Node</a></li>
                   <li><a href="#2a" data-toggle="tab">Percent Each Day</a></li>
