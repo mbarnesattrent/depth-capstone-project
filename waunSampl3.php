@@ -41,7 +41,8 @@
             </div>
             <div id="pHChart"></div>
             <div id="waterTemp"></div>
-            <div id="waterTempLineChart"></div>
+            <div id="waterLC"></div>
+            <div id="tempLC"></div>
 
             <script src="https://d3js.org/d3.v4.min.js"></script>
             <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>

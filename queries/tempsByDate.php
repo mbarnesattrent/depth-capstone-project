@@ -8,19 +8,26 @@
     //Use for testing
     //Pass a byDate with a flag of 1 to trigger this
 
+if ($_GET['nodeID']){
+        $node = "AND nodes.nodeID = " . $_GET['nodeID'];
+    }
+    else{
+        $node = "";
+    }
+
         //Query to get data for the logged in user
         $sql = "SELECT DATE(timestamp) as date, AVG(waterTemp) AS Temp, 'Water' AS Type
             FROM data, nodes, users 
             WHERE users.email = '$user' 
             AND users.id = nodes.userid
-            AND nodes.nodeID = data.nodeid
+            AND nodes.nodeID = data.nodeid $node
             GROUP BY DATE(timestamp)
             UNION ALL
             SELECT DATE(timestamp) as date, AVG(airTemp) AS Temp, 'Air' AS Type
             FROM data, nodes, users 
             WHERE users.email = '$user' 
             AND users.id = nodes.userid
-            AND nodes.nodeID = data.nodeid
+            AND nodes.nodeID = data.nodeid $node
             GROUP BY DATE(timestamp)";
     
     
