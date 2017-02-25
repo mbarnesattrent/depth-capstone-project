@@ -7,10 +7,11 @@
 
     //Use for testing
     //Pass a byDate with a flag of 1 to trigger this
+    echo "<img src='http://www.animatedimages.org/data/media/694/animated-submarine-image-0006.gif' border='0' alt='animated-submarine-image-0006'/><br>";
     echo "Node simulator started!<br>";
     
     $tempmin=22;
-    $tempmax=26;
+    $tempmax=25;
     $humiditymin = 16;
     $humiditymax = 19;
 
@@ -27,7 +28,7 @@
 
         while ($iter){
             
-            $airtemp = rand($tempmin*100,$tempmax*100)/100;
+            $airtemp = rand(($tempmin+2)*100,($tempmax+2)*100)/100;
             $watertemp = rand($tempmin*100,$tempmax*100)/100;
             $humidity = rand($humiditymin,$humiditymax);
             $pH = rand(650,740)/100;
