@@ -79,6 +79,10 @@
   function deleteNodeFunction() {
     $('#deleteNodeForm').submit();
   }
+
+  function addNodeFunction() {
+    $('#addNodeForm').submit();
+  }
 </script>
 
 
