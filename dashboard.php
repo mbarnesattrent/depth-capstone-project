@@ -75,6 +75,10 @@
       return deleteNodeID;
     }
   }
+
+  function deleteNodeFunction() {
+    $('#deleteNodeForm').submit();
+  }
 </script>
 
 
