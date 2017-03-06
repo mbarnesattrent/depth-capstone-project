@@ -77,4 +77,6 @@
 /* Body Utility Classes */
 .u-body-background {
   background-color: #31708f;
+  margin-top: 5em;
 }
+
