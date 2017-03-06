@@ -4,11 +4,12 @@
 
     connectToDb();
 
+    $user = $_SESSION['user'];
     //Performs a get for the specified node
     $node = $_GET['nodeID'];
     if ($node){
         $sql = "UPDATE nodes 
-             SET userID = 0 WHERE nodeID=$node";
+             SET userID = 0 WHERE nodeID=$node AND userID=(SELECT id FROM users WHERE email = '$user')";
     
         jsonQuery($sql);
 

@@ -11,7 +11,7 @@
     $node = $_GET['nodeID'];
     if ($node){
         $sql = "UPDATE nodes 
-             SET userID = (SELECT id FROM users WHERE email = '$user') WHERE nodeID=$node";
+             SET userID = (SELECT id FROM users WHERE email = '$user') WHERE nodeID=$node AND userID=0";
     
         $result = queryMysql($sql);
         if ($result == 1) {
