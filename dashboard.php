@@ -185,13 +185,13 @@
       <div class='row'>
         <div class='col-xs-6 col-sm-8 col-sm-offset-2'>
           <div class='well well-lg'>
-            <div class="container"><h1>Map</h1></div>
+            <div  class="container"><h1 id="maps">Map</h1></div>
             <div class="embed-responsive embed-responsive-16by9">
               <div id="map-canvas" style="width: 100%; height: 800px"></div>
             </div>
           </div>
           <div class='well well-lg'>
-            <div class="container"><h1>Dashboard Charts</h1></div>
+            <div id="charts" class="container"><h1>Dashboard Charts</h1></div>
             <div id="exTab1" class="container">
               <ul  class="nav nav-pills">
                 <li class="active"><a  href="#1a" data-toggle="tab">Records by Node</a></li>
@@ -233,9 +233,9 @@
 
           </div>
           <!-- Begin unconditional template -->
-          <div class="well">
+          <div id="nodes" class="well">
             <div class='h3'>
-              <div class='col-md-6'>Your Nodes</div>
+              <div  class='col-md-6'>Your Nodes</div>
               <button class='pull-right btn btn-primary btn-md' type="button" 
                       data-toggle="modal" data-target="#addNodeModal" aria-label="Add Node">
                 <span class="glyphicon glyphicon-ok-sign" style="color: white;"
