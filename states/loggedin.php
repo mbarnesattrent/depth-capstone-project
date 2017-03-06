@@ -16,9 +16,9 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="#">Links</a></li>
-          <li><a href="#">Map</a></li>
-          <li><a href="nodes.php">Nodes</a></li>
+          <li><a href="../dashboard.php#charts">Links</a></li>
+          <li><a href="../dashboard.php#maps">Map</a></li>
+          <li><a href="../dashboard.php#nodes">Nodes</a></li>
           <li><a href="#">Alerts</a></li>
           <li><a href="#">About</a></li>
         </ul>
