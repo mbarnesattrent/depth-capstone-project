@@ -144,7 +144,10 @@
 <!-- Modal Ends -->
 
 <!-- Pull in the user's node data -->
-<script src="/states/nodes/nodes.js"></script>
+<script language="javascript" src="/states/nodes/nodes.js"></script>
+<script language="javascript">
+  handleUserNodes("#address-template", "#node-content");
+</script>
 
 
 <!-- Handlebars template to import lists of dynamic length, or no list at all-->
