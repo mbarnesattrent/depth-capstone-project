@@ -7,8 +7,11 @@
     require 'states/index/index-loggedin.php';
   }
   else {
-    echo "<div class='main u-textAlign-center'>Welcome to $appname, ";
-    echo 'please sign up and/or log in to join in.';
+?>
+    <div id='notLoggedInMain' id='mainBG' class='main u-textAlign-center'>
+      <img src='assets/Depth Logo.png'>
+    </div>
+<?php
   }
 
 ?>
