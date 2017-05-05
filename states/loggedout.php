@@ -23,9 +23,38 @@
         </ul>
 
         <ul class="nav navbar-nav u-navbar-right">
-          <li><a href="login.php"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login/Register</a></li>
+          <li><a href="#myModal" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Login/Register</a></li>
         </ul> 
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
-</body>
+  </body>
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title"><span class="glyphicon glyphicon-log-in" aria-hidden="true"> Log-in</span></h4>
+        </div>
+        <form method='post' action='login.php'> <?php $error ?>
+          <div class="modal-body">
+            <div class="form-group">
+              <div class="u-padding-bottom">
+                <label id="loginUser">Username</label><input class='form-control' type='text'
+                  maxlength='32' name='user' id="loginUser">
+
+                <label for="loginPassword">Password</label><input class='form-control'type='password'
+                  maxlength='32' name='pass' id="loginPassword">
+                <span class='fieldname'>&nbsp;</span>
+              </div>
+              <a href='signup.php'>Don't have an account? Register!</a>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="#" data-dismiss="modal" class="btn">Close</a>
+            <input class='btn btn-primary' type='submit' value='Login'>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
